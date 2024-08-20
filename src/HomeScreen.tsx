@@ -1,4 +1,4 @@
-import {toDateString} from './helpers/utils';
+import {toDateString} from './helpers/date';
 import React from 'react';
 import {Button, Text, View} from 'react-native';
 import Animated, {useSharedValue, withSpring} from 'react-native-reanimated';
@@ -21,7 +21,8 @@ const HomeScreen = () => {
       />
       <Button onPress={handlePress} title="Click me" />
       <Text>{toDateString(new Date())}</Text>
-      <Text> {filterTypeOptions.toString()} </Text>
+      <Text> {new Date().toDateString()} </Text>
+      <Text> {filterTypeOptions[0].key} </Text>
     </View>
   );
 };
